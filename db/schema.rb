@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220170142) do
+ActiveRecord::Schema.define(version: 20170220173606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "equipment_provided"
+    t.text     "equipment_required"
+    t.string   "difficulty"
+    t.string   "cancellation_policy"
+    t.boolean  "is_active"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
