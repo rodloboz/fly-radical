@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220173606) do
+ActiveRecord::Schema.define(version: 20170220183658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +31,45 @@ ActiveRecord::Schema.define(version: 20170220173606) do
     t.boolean  "is_active"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "school_id"
+    t.integer  "sport_id"
+    t.index ["school_id"], name: "index_lessons_on_school_id", using: :btree
+    t.index ["sport_id"], name: "index_lessons_on_sport_id", using: :btree
+  end
+
+  create_table "school_photos", force: :cascade do |t|
+    t.integer  "school_id"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_school_photos_on_school_id", using: :btree
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "about"
+    t.string   "address"
+    t.string   "postal_code"
+    t.string   "city"
+    t.string   "country"
+    t.string   "website"
+    t.string   "email"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "is_active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_schools_on_user_id", using: :btree
+  end
+
+  create_table "sports", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_sports_on_category_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,8 +85,24 @@ ActiveRecord::Schema.define(version: 20170220173606) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "photo"
+    t.string   "gender"
+    t.string   "weight"
+    t.string   "height"
+    t.date     "birthdate"
+    t.string   "preferred_currency"
+    t.string   "preferred_language"
+    t.string   "about"
+    t.boolean  "is_active"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "lessons", "schools"
+  add_foreign_key "lessons", "sports"
+  add_foreign_key "school_photos", "schools"
+  add_foreign_key "schools", "users"
+  add_foreign_key "sports", "categories"
 end
