@@ -1,0 +1,17 @@
+<%= simple_form_for(@school) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :about %>
+  <%= f.input :address %>
+  <%= f.input :postal_code %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.input :website %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+
+  <%= f.button :submit %>
+  <%= link_to 'Publish School', activate_school_path(@school), class: 'btn btn-default' %>
+
+<% end %>
