@@ -34,7 +34,6 @@ class SchoolsController < ApplicationController
 
   def activate
     @school.activate
-    byebug
     if @school.valid?
       @school.is_active = true
       @school.save
@@ -51,6 +50,6 @@ class SchoolsController < ApplicationController
   end
 
   def school_params
-    params.require(:school).permit(:name, :about, :address, :postal_code, :city, :country, :email, :phone)
+    params.require(:school).permit(:name, :about, :address, :postal_code, :city, :country, :email, :phone, photos: [])
   end
 end

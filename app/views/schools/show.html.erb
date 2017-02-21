@@ -1,2 +1,7 @@
 <h1>Schools#show</h1>
 <p>Find me in app/views/schools/show.html.erb</p>
+
+
+<% @school.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>
