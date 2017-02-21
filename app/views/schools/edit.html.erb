@@ -11,7 +11,7 @@
   <%= f.input :email %>
   <%= f.input :phone %>
 
-  <%= f.button :submit %>
-  <%= link_to 'Publish School', activate_school_path(@school), class: 'btn btn-default' %>
+  <%= f.button :submit, class: "btn btn-outline" %>
+  <%= link_to 'Publish School', activate_school_path(@school), class: "btn btn-outline" %>
 
 <% end %>
