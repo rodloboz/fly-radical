@@ -4,7 +4,7 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #969E3C;
+  background-color: $brand-color;
   text-align: center;
 }
 
@@ -30,7 +30,7 @@ footer {
     transition: all .3s;
 
     :hover,:focus,:active {
-      color: #2B4162;
+      color: $blue_hover;
     }
   }
 
