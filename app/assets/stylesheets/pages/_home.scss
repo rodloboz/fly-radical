@@ -2,3 +2,20 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+ // Wrappers
+ .page-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+ }
+
+ // Padding
+
+ .padded-top {
+  padding-top: 50px;
+ }
+
+.padded-bottom {
+  padding-bottom: 50px;
+}
+
