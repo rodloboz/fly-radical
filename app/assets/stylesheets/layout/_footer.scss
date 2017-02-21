@@ -1,36 +1,37 @@
 footer {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #969E3C;
+  padding: 1em;
+  background-color: $brand-color;
   text-align: center;
+  width: 100%;
+  clear:both;
+  width:100%;
+  margin:auto;
 }
 
-  span.copyright {
-    padding-left: 10px;
-    color: #FFF;
-    text-transform: none;
-    font-size: 15px;
-    font-weight: 300;
+span.copyright {
+  padding-left: 10px;
+  color: #FFF;
+  text-transform: none;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 
-  li a {
-    display: block;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    color: #FFF;
-    padding-top: 5px;
-    background-color: transparent;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+li a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #FFF;
+  padding-top: 5px;
+  background-color: transparent;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
 
-    :hover,:focus,:active {
-      color: #2B4162;
-    }
+  :hover,:focus,:active {
+    color: $blue_hover;
   }
+}
 
