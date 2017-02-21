@@ -9,7 +9,7 @@
 # define an hash of sports where each category is a key
 # an an array of the sport for each category is the value
 # for example:
-sports_hash = {water: ["surfing," "bodyboarding," "stand up paddle surfing," "windsurfing," "kitesurfing," "wakeboarding," "kayaking," "rafting," "jet skiing," "water skiing"],
+sports_hash = {water: ["surfing", "bodyboarding", "stand up paddle surfing", "windsurfing", "kitesurfing", "wakeboarding", "kayaking", "rafting", "jet skiing", "water skiing"],
   snow: ["snowboarding", "skiing", "ice skating"],
   air: ["bungee jumping", "sky diving", "paragliding", "hang gliding"],
   other: ["horse riding", "rock climbing"]}
