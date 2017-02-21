@@ -34,6 +34,7 @@ class SchoolsController < ApplicationController
 
   def activate
     @school.activate
+    byebug
     if @school.valid?
       @school.is_active = true
       @school.save

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221033703) do
+ActiveRecord::Schema.define(version: 20170221115848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,24 @@ ActiveRecord::Schema.define(version: 20170221033703) do
     t.index ["sport_id"], name: "index_lessons_on_sport_id", using: :btree
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "photo"
+    t.string   "phone"
+    t.string   "gender"
+    t.string   "weight"
+    t.string   "height"
+    t.date     "birthdate"
+    t.string   "preferred_currency"
+    t.string   "preferred_language"
+    t.text     "about"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "booking_id"
     t.text     "body"
@@ -127,17 +145,6 @@ ActiveRecord::Schema.define(version: 20170221033703) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "photo"
-    t.string   "phone"
-    t.string   "gender"
-    t.string   "weight"
-    t.string   "height"
-    t.date     "birthdate"
-    t.string   "preferred_currency"
-    t.string   "preferred_language"
-    t.text     "about"
     t.boolean  "is_active"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -149,6 +156,7 @@ ActiveRecord::Schema.define(version: 20170221033703) do
   add_foreign_key "lesson_slots", "lessons"
   add_foreign_key "lessons", "schools"
   add_foreign_key "lessons", "sports"
+  add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "school_photos", "schools"
   add_foreign_key "schools", "users"
