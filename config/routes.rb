@@ -3,6 +3,11 @@ Rails.application.routes.draw do
     member do
       get 'activate'
     end
+    resources :lessons do
+      member do
+        get 'activate'
+      end
+    end
   end
 
   devise_for :users
