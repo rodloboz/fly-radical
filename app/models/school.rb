@@ -1,7 +1,7 @@
 class School < ApplicationRecord
   belongs_to :user
 
-  has_many :school_photos
+  has_attachments :photos, maximum: 2
   has_many :lessons
   has_many :sports, through: :lessons
 
