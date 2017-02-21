@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem 'country_select'
+gem 'faker'
 
 group :development, :test do
   gem 'binding_of_caller'
