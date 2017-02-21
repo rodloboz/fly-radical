@@ -12,12 +12,9 @@
 
 
     <%= render 'shared/navbar' %>
-    <div class="page-wrapper padded-top padded-bottom">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
-    <%= cloudinary_js_config %>
   </body>
 </html>
