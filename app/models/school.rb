@@ -8,7 +8,7 @@ class School < ApplicationRecord
   validates :name, uniqueness: { case_sensitive: false }, presence: true
 
   # runs remaining validations if already active or on becoming active
-  validates :about, :address, :city, :country, :email, :phone, presence: true, if: :should_validate?
+  validates :about, :address, :city, :country, :email, :phone, :photos, presence: true, if: :should_validate?
 
   def activate
     @activating = true
