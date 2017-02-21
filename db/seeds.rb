@@ -19,10 +19,10 @@ sports_hash.each do |key, array|
   # creates a new category by converting key to string
   # and passing it as the category name
   # saves new category object in a variable
-  category = Category.new(name: key.to_s)
+  category = Category.create(name: key.to_s)
   #look through the array of sports for that category
   array.each do | sport|
     #creates new sport in the category object
-    category.sports.new(name: sport)
+    category.sports.create(name: sport)
   end
 end
