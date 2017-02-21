@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 's' => 'pages#search', as: :search
+
   mount Attachinary::Engine => "/attachinary"
 
   devise_for :users

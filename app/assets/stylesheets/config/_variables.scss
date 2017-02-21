@@ -2,9 +2,10 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Merriweather:400,900");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
+$banner-font: "Merriweather", "serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -24,13 +25,30 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$brand-color: #969E3C;
+$brand-color: #90C695;
+$button-primary-hover: #b2d7b5;
+$border-grey: #ccc;
+$border-light:  #E6E6E6;
 
-$red: #EE5F5B;
+// Text
+$text-grey: #484848;
+$text-light: #c7c7c7;
+$text-dark: #333;
+
+$red: #FF474B;
+$red-light: #ff7e82;
 $blue: #469AE0;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 $blue_hover: #2b4162;
+
+
+// Gray scale
+$gray-darker:  lighten(#000, 13.5%); // #222
+$gray-dark:    lighten(#000, 20%);   // #333
+$gray:         lighten(#000, 33.5%); // #555
+$gray-light:   lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #eee
 
