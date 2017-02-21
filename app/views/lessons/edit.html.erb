@@ -1,0 +1,15 @@
+<%= simple_form_for([@school, @lesson]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :equipment_provided %>
+  <%= f.input :equipment_required %>
+  <%= f.input :difficulty %>
+  <%= f.input :cancellation_policy %>
+  <%= f.association :sport, value: Sport.all %>
+
+  <%= f.button :submit %>
+  <%= link_to 'Publish Lesson', activate_school_lesson_path(id: @lesson.id), class: 'btn btn-default' %>
+
+<% end %>

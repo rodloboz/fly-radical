@@ -1,9 +1,10 @@
 class School < ApplicationRecord
   belongs_to :user
-  
+
   has_many :school_photos
+  has_many :lessons
   has_many :sports, through: :lessons
-  
+
   validates :name, uniqueness: { case_sensitive: false }, presence: true
 
   # runs remaining validations if already active or on becoming active

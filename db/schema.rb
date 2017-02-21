@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220232323) do
+ActiveRecord::Schema.define(version: 20170221033703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 20170220232323) do
     t.text     "equipment_required"
     t.string   "difficulty"
     t.string   "cancellation_policy"
-    t.boolean  "is_active"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.boolean  "is_active",           default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "school_id"
     t.integer  "sport_id"
     t.index ["school_id"], name: "index_lessons_on_school_id", using: :btree
