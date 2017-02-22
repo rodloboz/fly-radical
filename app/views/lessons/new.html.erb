@@ -2,8 +2,12 @@
 <%= simple_form_for([@school, @lesson]) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
+   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :postal_code %>
+  <%= f.input :city %>
+  <%= f.input :country %>
   <%= f.input :equipment_provided %>
   <%= f.input :equipment_required %>
   <%= f.input :difficulty %>
