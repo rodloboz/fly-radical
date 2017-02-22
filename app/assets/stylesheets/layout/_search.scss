@@ -1,0 +1,133 @@
+.search-form {
+    border: 1px solid $border-grey;
+    border-radius: 4px;
+    -moz-box-shadow:    0px 2px 3px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+    box-shadow:         0px 2px 3px rgba(0,0,0,.4);
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    width: 750px;
+    margin: 0 auto;
+}
+
+.search-form form {
+    display: table;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.search-form-wrapper {
+    display: table;
+    table-layout: fixed;
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    position: relative;
+    padding-right: 0;
+}
+
+.search-form-row {
+    display: table-row;
+    width: 100%;
+}
+
+.search-form-location {
+    position: initial;
+    width: 43%;
+    padding: 15px 16px 8px !important;
+    display: table-cell;
+    float: none;
+    display: inline-block;
+}
+
+.search-form-activity {
+    width: 37%;
+    padding: 15px 16px 8px !important;
+    display: table-cell;
+    float: none;
+    text-align: left;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: $border-grey;
+    display: inline-block;
+}
+
+.search-form-submit {
+    width: 20%;
+    vertical-align: middle;
+    float: right;
+    padding: 23px 16px 8px !important;
+    padding-bottom: 16px !important;
+    display: inline-block;
+}
+
+.search-form-submit-text {
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+.search-form-label {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    display: block;
+    line-height: normal;
+    color: $text-grey;
+}
+
+.location-input {
+    font-size: 19px !important;
+    letter-spacing: -0.5px;
+    line-height: 22px !important;
+    border-style: hidden;
+    display:block;
+    width: 100%;
+    padding: 8px 0 !important;
+    cursor: text;
+    color: $text-grey;
+}
+
+.location-input:focus {
+    outline: none !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: 0px 1px 0px $red-light !important;
+}
+
+.activity-input {
+    font-size: 19px !important;
+    letter-spacing: -0.5px;
+    line-height: 22px !important;
+    border-style: hidden;
+    display:block;
+    width: 100%;
+    padding: 8px 0 !important;
+    cursor: text;
+}
+
+.activity-input:focus {
+    outline: none !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: $text-grey;
+    box-shadow: 0px 1px 0px $red-light !important;
+}
+
+.dropdown-wrapper {
+    padding-right: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 3000;
+    padding-right: 2px;
+    padding-left: 0;
+}

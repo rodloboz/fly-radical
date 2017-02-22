@@ -13,8 +13,8 @@
 
     <%= render 'shared/navbar' %>
     <%= yield %>
-
     <%= render 'shared/footer' %>
+    <%= yield(:before_js) %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

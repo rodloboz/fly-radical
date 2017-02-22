@@ -21,4 +21,8 @@ class School < ApplicationRecord
   def should_validate?
     is_active || @activating
   end
+
+  def full_address
+  "#{address}, #{postal_code}, #{city}, #{country}"
+  end
 end
