@@ -39,6 +39,17 @@
                 <% end %>
               </li>
               <hr>
+
+            <% if current_user.schools.any? %>
+
+              <li>
+                <%= link_to "My Schools", schools_path %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Become a Partners", new_school_path %>
+              </li>
+            <% end %>
             </ul>
           </div>
         </div>

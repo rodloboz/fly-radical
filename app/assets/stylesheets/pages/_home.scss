@@ -2,6 +2,18 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+  //headings
+
+  body{
+    color: $body;
+  }
+
+  h1{
+    font-family: sans-serif;
+    line-height: 32px;
+    padding-bottom: 10px;
+    font-weight: lighter;
+  }
 
  // Wrappers
  .page-wrapper {
