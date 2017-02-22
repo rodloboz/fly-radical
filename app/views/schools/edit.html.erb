@@ -4,15 +4,20 @@
 
   <%= f.input :name %>
   <%= f.input :about %>
-  <%= f.input :address %>
-  <%= f.input :postal_code %>
-  <%= f.input :city %>
-  <%= f.input :country %>
+  <%= f.input :address, class: "address" %>
+  <%= f.input :postal_code, class: "address-postal_code" %>
+  <%= f.input :city, class: "address-city" %>
+  <%= f.input :country, class: "address-country" %>
   <%= f.input :website %>
-  <%= f.input :email %>
   <%= f.input :phone %>
+  <%= f.input :photos, as: :attachinary %>
 
   <%= f.button :submit, class: "btn btn-outline" %>
   <%= link_to 'Publish School', activate_school_path(@school), class: "btn btn-outline" %>
 
+<% end %>
+
+
+<%= content_for(:before_js) do %>
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
 <% end %>
