@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var address = $('.geo-search').get(0);
+  var address = $('.geocode-address').get(0);
 
   if (address) {
     var autocomplete = new google.maps.places.Autocomplete(address, { types: ['geocode'] });
