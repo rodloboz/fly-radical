@@ -12,7 +12,10 @@
 
 
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <%= render 'shared/banner' %>
+    <div class="page-wrapper padded-top padded-bottom">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= yield(:before_js) %>
     <%= javascript_include_tag 'application' %>

@@ -10,6 +10,9 @@ class School < ApplicationRecord
   # runs remaining validations if already active or on becoming active
   validates :about, :address, :city, :country, :email, :phone, :photos, presence: true, if: :should_validate?
 
+  geocoded_by :full_address
+  after_validation :geocode, if: :address_changed? || :city_changed? || :country_changed?
+
   def activate
     @activating = true
   end
