@@ -2,7 +2,7 @@
   <%= link_to school_lesson_path(lesson.school, lesson) do %>
   <img class="card-img-top">
   <% if lesson.photos.any? %>
-    <%= cl_image_tag lesson.photos.first.path, width: 300, height: 200, crop: fill %>
+    <%= image_tag lesson.photos.first, class: "img-responsive" %>
     <% end %>
   <% end %>
   <div class="card-block">
