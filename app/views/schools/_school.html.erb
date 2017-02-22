@@ -1,0 +1,14 @@
+<div class="card col-xs-6 col-sm-4 card container drop-shadow" style="width: 35rem;">
+<%= link_to school_path(school) do %>
+    <img class="card-img-top img-responsive">
+    <% if school.photos.any? %>
+    <%= cl_image_tag school.photos.first.path, width: 300, height: 200, crop: :fill %>
+    <% end %>
+
+
+    <div class="card-block">
+      <h4 class="card-title"><%= school.name.upcase %></h4>
+    </div>
+    <% end %>
+    <p>Added by <%= school.name%></p>
+</div>
