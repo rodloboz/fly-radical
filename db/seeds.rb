@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
-require 'byebug'
 # define an hash of sports where each category is a key
 # an an array of the sport for each category is the value
 # for example:
