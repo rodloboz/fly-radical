@@ -5,10 +5,12 @@ class Lesson < ApplicationRecord
   has_many :lesson_slots
   has_attachments :photos, maximum: 2
 
+
   validates :name, uniqueness: { case_sensitive: false, scope: :school_id }, presence: true
 
   # runs remaining validations if already active or on becoming active
   validates :description, :equipment_provided, :equipment_required, :difficulty, :cancellation_policy, :photos, presence: true, if: :should_validate?
+
 
   def activate
     @activating = true
