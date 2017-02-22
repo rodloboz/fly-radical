@@ -4,13 +4,18 @@
 
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :postal_code %>
+  <%= f.input :city %>
+  <%= f.input :country %>
   <%= f.input :equipment_provided %>
   <%= f.input :equipment_required %>
   <%= f.input :difficulty %>
   <%= f.input :cancellation_policy %>
   <%= f.association :sport, value: Sport.all %>
+  <%= f.input :photos, as: :attachinary %>
 
   <%= f.button :submit, class: "btn btn-outline"  %>
-  <%= link_to 'Publish Lesson', activate_school_lesson_path(id: @lesson.id), , class: "btn btn-outline" %>
+  <%= link_to 'Publish Lesson', activate_school_lesson_path(id: @lesson.id), class: "btn btn-outline" %>
 
 <% end %>

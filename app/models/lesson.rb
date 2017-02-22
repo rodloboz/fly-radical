@@ -9,8 +9,10 @@ class Lesson < ApplicationRecord
   validates :name, uniqueness: { case_sensitive: false, scope: :school_id }, presence: true
 
   # runs remaining validations if already active or on becoming active
-  validates :description, :equipment_provided, :equipment_required, :difficulty, :cancellation_policy, :photos, presence: true, if: :should_validate?
+  validates :description, :address, :city, :country, :equipment_provided, :equipment_required, :difficulty, :cancellation_policy, :photos, presence: true, if: :should_validate?
 
+  geocoded_by :full_address
+  after_validation :geocode, if: :address_changed? || :city_changed? || :country_changed?
 
   def activate
     @activating = true
@@ -22,5 +24,9 @@ class Lesson < ApplicationRecord
 
   def should_validate?
     is_active || @activating
+  end
+
+  def full_address
+  "#{address}, #{postal_code}, #{city}, #{country}"
   end
 end

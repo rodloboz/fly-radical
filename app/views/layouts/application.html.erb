@@ -10,14 +10,14 @@
   </head>
   <body>
 
-
     <%= render 'shared/navbar' %>
     <div class="page-wrapper padded-top padded-bottom">
       <%= yield %>
     </div>
-
     <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
+    <%= javascript_include_tag 'application' %>
+     <%= yield(:after_js) %>
+
   </body>
 </html>

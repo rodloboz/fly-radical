@@ -5,10 +5,9 @@ class PagesController < ApplicationController
   end
 
   def search
-    @lessons = []
-    if params[:location].present? && params[:activity]
-      @lessons << Lesson.joins(:schools).where('schools.city = ?', params[:location])
-    end
-    byebug
+      @lessons = Lesson.all
+      @lessons = Lesson.near(params[:location]).joins(:sport).where(sports: {name: "#{params[:activity]}"}) if params[:location] && params[:activity]
+      @lessons = Lesson.near(params[:location], 5) if params[:location]
+      @lessons = Lesson.joins(:sport).where(sports: {name: "#{params[:activity]}"}) if params[:activity]
   end
 end
