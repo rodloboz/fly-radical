@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20170222133440) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lesson_photos", force: :cascade do |t|
-    t.integer  "lesson_id"
-    t.string   "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_lesson_photos_on_lesson_id", using: :btree
-  end
-
   create_table "lesson_slots", force: :cascade do |t|
     t.integer  "lesson_id"
     t.datetime "start"
@@ -118,14 +110,6 @@ ActiveRecord::Schema.define(version: 20170222133440) do
     t.index ["booking_id"], name: "index_reviews_on_booking_id", using: :btree
   end
 
-  create_table "school_photos", force: :cascade do |t|
-    t.integer  "school_id"
-    t.string   "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["school_id"], name: "index_school_photos_on_school_id", using: :btree
-  end
-
   create_table "schools", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -173,13 +157,11 @@ ActiveRecord::Schema.define(version: 20170222133440) do
 
   add_foreign_key "bookings", "lesson_slots"
   add_foreign_key "bookings", "users"
-  add_foreign_key "lesson_photos", "lessons"
   add_foreign_key "lesson_slots", "lessons"
   add_foreign_key "lessons", "schools"
   add_foreign_key "lessons", "sports"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "bookings"
-  add_foreign_key "school_photos", "schools"
   add_foreign_key "schools", "users"
   add_foreign_key "sports", "categories"
 end

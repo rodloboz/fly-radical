@@ -1,9 +1,12 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
+<div class="col-xs-6 col-sm-4 card container drop-shadow"  style="width: 30rem;">
+  <%= link_to school_lesson_path(lesson.school, lesson) do %>
+  <img class="card-img-top">
+  <% if lesson.photos.any? %>
+    <%= cl_image_tag lesson.photos.first.path, width: 300, height: 200, crop: fill %>
+    <% end %>
+  <% end %>
+  <div class="card-block">
+    <h2 class="card-title"><%= lesson.name.upcase %></h2>
   </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
+  <p>School: <%= lesson.school.name %></p>
 </div>
