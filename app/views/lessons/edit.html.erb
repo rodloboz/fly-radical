@@ -11,6 +11,6 @@
   <%= f.association :sport, value: Sport.all %>
 
   <%= f.button :submit, class: "btn btn-outline"  %>
-  <%= link_to 'Publish Lesson', activate_school_lesson_path(id: @lesson.id), , class: "btn btn-outline" %>
+  <%= link_to 'Publish Lesson', activate_school_lesson_path(id: @lesson.id), class: "btn btn-outline" %>
 
 <% end %>
