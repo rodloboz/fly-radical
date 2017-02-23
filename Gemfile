@@ -28,6 +28,7 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 gem "geocoder"
+gem "chronic_duration"
 
 group :development, :test do
   gem 'binding_of_caller'
