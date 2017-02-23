@@ -9,7 +9,8 @@ class SchoolsController < ApplicationController
   end
 
   def new
-    @school = current_user.schools.new
+    # @school = current_user.schools.new
+    @school = School.new
   end
 
   def create
@@ -50,6 +51,6 @@ class SchoolsController < ApplicationController
   end
 
   def school_params
-    params.require(:school).permit(:name, :about, :address, :postal_code, :city, :country, :email, :phone, photos: [])
+    params.require(:school).permit(:name, :about, :address, :postal_code, :city, :country, :email, :phone, :website, photos: [])
   end
 end

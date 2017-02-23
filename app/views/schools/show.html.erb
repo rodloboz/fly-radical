@@ -1,8 +1,38 @@
+
+
 <% title "List of Schools" %>
-<h1>Schools#show</h1>
-<p>Find me in app/views/schools/show.html.erb</p>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="row">
+      <div class="col-md-9 lead"><h1><%= @school.name %></h1><hr></div>
+    </div>
+    <div class="row">
+      <% @school.photos.each do |photo| %>
+      <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+      <% end %>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="text-muted">About:</span><%= @school.about %><br>
+            <span class="text-muted">Phone:</span><%= @school.phone %><br>
+            <hr>
 
+            <div class="next">
+              <% if current_user.schools.any? %>
+              <button type="button" class="btn btn-brand"><%= link_to "Edit", edit_school_path, class: "btn btn-brand"%>
+              </button>
+              <button type="button" class="btn btn-brand">
+                <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
+              </button>
+              <% else %>
+              <p><%= link_to "Become a Partners", new_school_path %>
+              </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% @school.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>

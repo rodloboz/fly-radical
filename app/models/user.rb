@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :lessons, through: :schools
   has_many :schools
   has_many :bookings
   has_many :reviews, through: :bookings
@@ -30,4 +31,9 @@ class User < ApplicationRecord
 
     return user
   end
+  has_attachment  :avatar, accept: [:jpg, :png, :gif]
+
+  # validates :first_name, presence: true, length: {maximum: 35}
+  # validates :last_name, presence: true, length: {maximum: 35}
+  # validates :avatar, presence: true
 end

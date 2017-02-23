@@ -26,9 +26,9 @@
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
-    <%= cloudinary_js_config %>
     <%= javascript_include_tag 'application' %>
-     <%= yield(:after_js) %>
+    <%= cloudinary_js_config %>
+     <%= yield(:before_js) %>
 
   </body>
 </html>

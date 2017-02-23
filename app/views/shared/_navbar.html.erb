@@ -1,15 +1,16 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+  <%= image_tag "logo.png" %>
   <% end %>
 
   <!-- Search form -->
   <div class="search-bar-wrapper hidden-xs hidden-sm">
     <%= form_tag('pages#home', method: :get, class: "navbar-wagon-search") do %>
-      <i class="fa fa-search"></i>
-      <%= text_field_tag :search, params[:search], class: "navbar-wagon-search-input" %>
+    <i class="fa fa-search"></i>
+    <%= text_field_tag :search, params[:search], class: "navbar-wagon-search-input" %>
     <% end %>
+
     <!-- <form action="" class="navbar-wagon-search">
       <i class="fa fa-search"></i>
       <input type="text" class="navbar-wagon-search-input">
@@ -18,11 +19,30 @@
  </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
+    <% if user_signed_in? %>
 
-    <!-- Different navigation if login or not -->
+    <% if current_user.schools.any? %>
+
+    <%= link_to "My Schools", schools_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+
+    <div class="dropdown navbar-wagon-item navbar-wagon-link">
+      <%= link_to "Add new lesson", "#", class: "dropdown-toggle", id:"navbar-wagon-menu-two", "data-toggle" => "dropdown" %>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% current_user.schools.each do |s| %>
+        <li>
+          <%= link_to "#{s.name}", new_school_lesson_path(s) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <% else %>
+    <%= link_to "Become a Partner", new_school_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+    <% end %>
+    <% end %>
+
+<!-- Different navigation if login or not -->
     <div class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-
         <!-- Profile picture and dropdown -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -48,11 +68,12 @@
             </ul>
           </div>
         </div>
+      </div>
       <% else %>
-        <%= link_to "Sign Up", new_user_registration_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
-        <%= link_to "Log In", new_user_session_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+      <%= link_to "Sign Up", new_user_registration_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
+      <%= link_to "Log In", new_user_session_path, {class: "navbar-wagon-item navbar-wagon-link"} %>
 
       <% end %>
-   </div>
+    </div>
   </div>
 </div>

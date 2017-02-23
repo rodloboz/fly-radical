@@ -79,6 +79,9 @@ ActiveRecord::Schema.define(version: 20170222161156) do
     t.string   "country"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "price"
+    t.integer  "duration"
+    t.integer  "group_size"
     t.index ["school_id"], name: "index_lessons_on_school_id", using: :btree
     t.index ["sport_id"], name: "index_lessons_on_sport_id", using: :btree
   end

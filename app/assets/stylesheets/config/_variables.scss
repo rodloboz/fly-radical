@@ -2,7 +2,7 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Merriweather:400,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Merriweather:400,900");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 $banner-font: "Merriweather", "serif";
@@ -30,7 +30,10 @@ $button-primary-hover: #b2d7b5;
 $border-grey: #ccc;
 $border-light:  #E6E6E6;
 
+
+
 // Text
+$body-text: #585858;
 $text-grey: #484848;
 $text-light: #c7c7c7;
 $text-dark: #333;
