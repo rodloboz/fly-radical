@@ -10,8 +10,13 @@
     <i class="fa fa-search"></i>
     <%= text_field_tag :search, params[:search], class: "navbar-wagon-search-input" %>
     <% end %>
-  </div>
 
+    <!-- <form action="" class="navbar-wagon-search">
+      <i class="fa fa-search"></i>
+      <input type="text" class="navbar-wagon-search-input">
+    </form>
+ -->
+ </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
     <% if user_signed_in? %>
@@ -38,24 +43,30 @@
 <!-- Different navigation if login or not -->
     <div class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
 
+          <!-- Facebook connect -->
 
-  <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://lorempixel.com/50/50/people/", class: "avatar-bordered dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".profile", default: "Edit Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <%= t(".profile", default: "Edit Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+              <hr>
+            </ul>
+          </div>
         </div>
       </div>
       <% else %>

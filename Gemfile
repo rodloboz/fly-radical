@@ -28,6 +28,8 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 gem "geocoder"
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem "chronic_duration"
 
 group :development, :test do
