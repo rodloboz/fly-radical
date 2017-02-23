@@ -14,8 +14,8 @@
       <i class="fa fa-search"></i>
       <input type="text" class="navbar-wagon-search-input">
     </form>
- -->  </div>
-
+ -->
+ </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
 
@@ -26,7 +26,13 @@
         <!-- Profile picture and dropdown -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <%= image_tag "http://lorempixel.com/50/50/people/", class: "avatar-bordered dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+          <!-- Facebook connect -->
+
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
                 <%= link_to edit_user_registration_path do %>

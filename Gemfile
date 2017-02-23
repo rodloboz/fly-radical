@@ -28,6 +28,8 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 gem "geocoder"
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
