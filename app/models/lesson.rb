@@ -1,8 +1,10 @@
+require 'chronic_duration'
+
 class Lesson < ApplicationRecord
   belongs_to :school
   belongs_to :sport
 
-  has_many :lesson_slots
+  has_many :reviews, through: :bookings
   has_attachments :photos, maximum: 2
 
 
@@ -28,5 +30,9 @@ class Lesson < ApplicationRecord
 
   def full_address
   "#{address}, #{postal_code}, #{city}, #{country}"
+  end
+
+  def duration_time
+    ChronicDuration.output(duration, format: :long)
   end
 end

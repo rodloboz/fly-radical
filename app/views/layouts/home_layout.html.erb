@@ -19,5 +19,11 @@
     <%= render 'shared/footer' %>
     <%= yield(:before_js) %>
     <%= javascript_include_tag 'application' %>
+
+    <script type="text/javascript">
+    var cl = cloudinary.Cloudinary.new({cloud_name: "rodloboz"});
+    // replace 'demo' with your cloud name in the line above
+    cl.responsive();
+</script>
   </body>
 </html>
