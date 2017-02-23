@@ -1,5 +1,54 @@
 require 'chronic_duration'
 
+PHOTOS = %w(https://www.surfingindia.net/files/surf-files/u9/India_Surf_Tours_-_17__1_.jpg
+https://s-media-cache-ak0.pinimg.com/originals/5c/3f/2f/5c3f2f859e3a0aa177e8acabb168c82f.jpg
+http://exoticvoyage.com/wp-content/uploads/2015/04/surfing1.jpg
+http://surf-wax.co.uk/wp-content/uploads/2014/10/surf-the-wave.jpg
+https://i.ytimg.com/vi/b6hoBp7Hk-A/maxresdefault.jpg
+http://www.mrwallpaper.com/wallpapers/surfing-big-wave-sunset.jpg
+http://www.surfingdubai.com/img/slider/slide-2.jpg
+http://cdn.webninjashops.com/boardshop/images/content_images/bodyboarding.jpg
+http://www.bodyboard-holidays.com/wp-content/uploads/photo-gallery/Costa%20Rica%20Waves/costa-rica-2960.jpg
+https://en.freshsurf.de/wp-content/uploads/2016/02/Salomoon-moore-Bodyboarding.jpg
+https://static1.squarespace.com/static/5009bba4e4b016a023bf6030/t/5581ec20e4b0a5db48a55f56/1434577956896/Snowboarding-Wallpaper.jpg?format=1500w
+http://snowbrains.com/wp-content/uploads/2014/01/url-2.jpeg
+http://www.statisticbrain.com/wp-content/uploads/2015/09/snowboarding-industry-statistics.png
+http://www.salzburgersportwelt.com/img/heads/snowboard_klein.jpg
+http://www.wantedinrome.com/wp-content/uploads/2015/02/skiing-86491418.jpg
+http://www.obertauern.com/fileadmin/_processed_/csm_skifahren_obertauern6_68776dc35c.jpg
+http://www.grindtv.com/wp-content/uploads/2015/11/PB-FP-450-1024x540.jpg
+https://wrapper2.s3.amazonaws.com/wrapper2Image/4608/1430679086.5926/1362549861base-jumping-at-zakynthos-greece.jpg
+http://i2.cdn.cnn.com/cnnnext/dam/assets/160112134102-03-base-jumping-landmarks-super-169.jpg
+http://www.theplaidzebra.com/wp-content/uploads/2014/11/2_BASE-Jumper-Explains-The-Importance.jpg
+https://i.ytimg.com/vi/YSuo0j2xsj8/maxresdefault.jpg
+http://image3.redbull.com/rbcom/010/2015-05-04/1331720977298_3/0012/0/382/0/1713/1999/1500/3/detroit-skateboarding.jpg
+https://i.ytimg.com/vi/X9tMocUR-80/maxresdefault.jpg
+http://image2.redbull.com/rbcom/010/2017-02-10/1331844245442_2/0012/0/0/0/1498/2999/1500/2/chris-russell-madonna-vielle-st-girons-kevin-metallier.jpg
+https://static1.squarespace.com/static/51d6fea9e4b0f798b539e0ca/51d71192e4b05a25fc1d485a/51e43c59e4b097ec7f8c6f29/1373912156353/Skateboarding-22.jpg?format=1000w
+https://c1.staticflickr.com/4/3128/2716765679_85a13b662f_b.jpg
+http://eskipaper.com/images/xgames-10.jpg
+https://i.ytimg.com/vi/VUjF1fRw9sA/maxresdefault.jpg
+http://cdn.paper4pc.com/images/motorcycle-racing-sports-motocross-dirt-storm-rain-sky-clouds-sunset-bike-motorbike-wallpaper-1.jpg
+http://www.mxlarge.com/mxlarge/wp-content/uploads/2015/12/5567_Motocross-2015-Action_90302.jpg
+http://www.cycleworld.com/sites/cycleworld.com/files/styles/large_1x_/public/images/2016/09/i-mjffld3-x2.jpg?itok=hbmZrqhJ&fc=50,50
+http://www.jokesoftheday.net/jokes-archive/2016/07/18/Skydiving.jpg
+https://i.ytimg.com/vi/apYEQlGlUAY/maxresdefault.jpg
+http://www.balmers.com/wp-content/uploads/2015/05/Balmers-Skydive-3.jpg
+https://s-media-cache-ak0.pinimg.com/originals/1b/9a/5c/1b9a5cbb7cc446f83f2b719e92e136ba.jpg
+https://s-media-cache-ak0.pinimg.com/originals/74/1b/bb/741bbb3903d7d01da32eb80fba054e27.jpg
+http://pop.h-cdn.co/assets/15/28/980x490/landscape-1436537168-shark-cage-web.jpg
+https://upload.wikimedia.org/wikipedia/commons/d/d9/Sharks_outside_cage.jpg
+http://www.uttarakhandincredible.com/wp-content/uploads/2016/07/bungee-jumping-in-rishikesh.jpg
+https://farm6.staticflickr.com/5163/5248487731_bc546c1882_b.jpg
+http://activeazur.wpengine.netdna-cdn.com/wp-content/uploads/2014/01/tignes-mountain-biking-3.jpg
+https://i.ytimg.com/vi/61aM0DXpKkc/maxresdefault.jpg
+http://www.pension-gabi.at/fileadmin/_processed_/csm_saalbach-hinterglemm-by-nathan-hughes-01_332c1a9cee.adaptive.jpg
+http://holidaysgenius.com/media/uploads/2016/04/aaaaaa.jpg
+http://dseghcenter.info/images/paragliding-uhd-widescreen-ultra_119554.jpg
+https://i.ytimg.com/vi/ELcvsp8wX4E/maxresdefault.jpg
+http://kitemallorca.com/wp-content/uploads/Kitesurfen-schule-auf-Mallorca-edmkpollensa-1038x576.png
+http://www.dukite.com/wp-content/uploads/2011/12/crazyfly-action21.jpg)
+
 DIFFICULTY = ["easy", "beginner", "medium", "experienced", "pro", "daredevil"]
 
 SPORTS = {
@@ -59,6 +108,7 @@ users.each do |user|
   school.website = Faker::Internet.url
   school.email = Faker::Internet.email
   school.phone = Faker::PhoneNumber.phone_number
+  school.photo_urls = PHOTOS.sample(2)
   school.save!
 end
 
@@ -82,8 +132,9 @@ schools.each do |school|
     lesson.city = address[:city]
     lesson.country = address[:country]
     lesson.price = rand(21..399)
-    lesson.duration =
-    lesson.group_size
+    lesson.duration = ChronicDuration.parse(DURATIONS.sample)
+    lesson.group_size = rand (1..9)
+    lesson.photo_urls = PHOTOS.sample(2)
     lesson.save!
   end
 end
