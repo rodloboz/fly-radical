@@ -63,6 +63,8 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
+    chronic_duration (0.10.6)
+      numerizer (~> 0.1.1)
     cloudinary (1.1.7)
       aws_cf_signer
       rest-client
@@ -137,6 +139,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    numerizer (0.1.1)
     orm_adapter (0.5.0)
     pg (0.19.0)
     pry (0.10.4)
@@ -238,6 +241,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  chronic_duration
   cloudinary (= 1.1.7)
   coffee-rails
   country_select
