@@ -1,3 +1,5 @@
+
+
 <% title "List of Schools" %>
 <div class="row">
   <div class="panel panel-default">
@@ -20,17 +22,13 @@
               <button type="button" class="btn btn-brand"><%= link_to "Edit", edit_school_path, class: "btn btn-brand"%>
               </button>
               <button type="button" class="btn btn-brand">
-                <%= link_to "Add New Lesson", new_school_path , class: "btn btn-brand" %>
+                <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
               </button>
               <% else %>
               <p><%= link_to "Become a Partners", new_school_path %>
               </p>
               <% end %>
             </div>
-
-
-
-
           </div>
         </div>
       </div>

@@ -9,7 +9,8 @@ class SchoolsController < ApplicationController
   end
 
   def new
-    @school = current_user.schools.new
+    # @school = current_user.schools.new
+    @school = School.new
   end
 
   def create
