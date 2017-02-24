@@ -1,17 +1,26 @@
 .card-lesson {
   a {
-  color: #484848;
-  text-transform: none;
-}
+    color: #484848;
+    text-transform: none;
+  }
 }
 
-
-.card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+.card-border{
+  height: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
   background-size: cover !important;
   color: white;
   position: relative;
+  display: block;
+  padding: 4px;
+  margin-bottom: 22px;
+  line-height: 1.4;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  -webkit-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
 }
 .card-user {
   position: absolute;
@@ -35,7 +44,7 @@
 }
 .card-description p {
   font-size: 13px;
-  }
+}
 .card-link {
   position: absolute;
   top: 0;

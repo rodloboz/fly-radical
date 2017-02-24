@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-xs-6 thumbnail card-lesson">
+<div class="col-sm-4 col-xs-6 card-border">
   <%= link_to school_lesson_path(lesson.school, lesson) do %>
     <div>
       <% if lesson.photos.any? %>
@@ -8,9 +8,8 @@
     <div>
       <span>
         <strong>€<%= lesson.price %></strong>
-        <%= lesson.duration %>
          &middot;
-        <%= lesson.sport.name %>
+        <%= lesson.name %>
       </span>
     </div>
   <% end %>

@@ -1,5 +1,5 @@
-<% title "Add New" %>
-<div class="'geocode-address'">
+<% title "new school" %>
+<div class="'geocode-address' container row col-md-6 col-md-offset-3">
 <%= simple_form_for(@school) do |f| %>
   <%= f.error_notification %>
 
@@ -15,7 +15,9 @@
 
   <%= f.button :submit, class: "btn btn-outline"%>
 
+
 <% end %>
+<br/>
 </div>
 
 <%= content_for(:before_js) do %>
