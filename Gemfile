@@ -31,7 +31,6 @@ end
 gem "geocoder"
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem "chronic_duration"
 
 group :development, :test do
   gem 'binding_of_caller'
