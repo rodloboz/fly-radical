@@ -1,0 +1,12 @@
+<%= simple_form_for(lesson_slot, url: path) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.input :price %>
+  <%= f.input :group_size %>
+  <%= f.input :duration %>
+
+  <%= f.button :submit, class: "btn btn-outline"%>
+
+<% end %>

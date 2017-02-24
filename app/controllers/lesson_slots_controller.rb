@@ -5,7 +5,7 @@ class LessonSlotsController < ApplicationController
   end
 
   def show
-    @lesson_slot = LessonSlot.find(params[:id])
+    @lesson_slot = LessonSlot.find(params[:lesson_id])
   end
 
   def new
@@ -19,7 +19,7 @@ class LessonSlotsController < ApplicationController
     @school = School.find(params[:school_id])
     @lesson = Lesson.find(params[:lesson_id])
     if @lesson_slot.save
-      redirect_to school_lesson_lesson_slot_path(@school, @lesson, @bookings, @lesson_slot)
+      redirect_to school_lesson_lesson_slots_path(@school, @lesson)
     else
       render :new
     end
@@ -53,7 +53,7 @@ class LessonSlotsController < ApplicationController
   end
 
   def lesson_slot_params
-    params.require(:lesson_slot).permit(:quantity, :id, :lesson_id, :school_id, :lesson_slot_date, :payment_date)
+    params.require(:lesson_slot).permit(:id, :start, :end, :price, :group_size, :duration)
   end
 
 end
