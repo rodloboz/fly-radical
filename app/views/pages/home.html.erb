@@ -1,7 +1,12 @@
-<% title "Landing" %>
+<% title "lessons" %>
 
-<h4>Choose your action sport</h4>
-<div class="row">
-  <%= render @lessons %>
-</div>
+<% if user_signed_in? %>
+<h3>Choose your Action Sport</h3>
+  <div class="row">
+    <%= render @lessons %>
+  </div>
+<% else %>
+  <div class="row">
+  </div>
+<% end %>
 

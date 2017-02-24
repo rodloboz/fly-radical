@@ -6,6 +6,8 @@ class SchoolsController < ApplicationController
   end
 
   def show
+    @school = School.find(params[:id])
+    @school_coordinates = { lat: @school.latitude, lng: @school.longitude }
   end
 
   def new

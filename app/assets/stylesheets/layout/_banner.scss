@@ -15,18 +15,20 @@
 }
 
 .banner h1 {
-    font-family: $banner-font;
+    font-family: $header-font;
+    text-transform: uppercase;
     color: $brand-color;
     font-size: 55px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 80px;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 }
 
 .banner p {
-    font-size: 25px;
+    margin-top: -12px;
+    font-size: 27px;
     font-weight: lighter;
-    text-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 2px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
     margin-bottom: 50px;
     color: $text-light;
