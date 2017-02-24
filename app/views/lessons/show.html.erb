@@ -77,6 +77,50 @@
     </div>
   </div>
 </div>
+
+<div class="row show-page">
+  <hr>
+
+  <div class="col-md-4 ">
+
+    <% @lesson.photos.each do |photo| %>
+    <%= cl_image_tag photo.path, width: 350, height: 300, class: "show-img", crop: :fill %>
+    <% end %>
+  </div>
+  <hr>
+  <div class="col-md-8">
+    <div class="row">
+      <h4 class="col-md-3">About Lesson: </h4><p class="col-md-8"><%= @lesson.description %></p>
+    </div>
+    <hr>
+    <div class="row">
+      <h4 class="col-md-3">Cancellation Policy: </h4><p class="col-md-6"><%= @lesson.cancellation_policy %></p>
+    </div>
+    <hr>
+    <div class="row">
+      <h4 class="col-md-3">Location: </h4><p class="col-md-6"><%= @lesson.address %><br/>
+        <%= @lesson.city %>
+      </p>
+    </div>
+
+  </div>
+  <div class="col-md-12">
+    <hr>
+    <% if current_user.schools.any? %>
+    <button type="button" class="btn btn-brand"><%= link_to "Go back to Schools", school_path, class: "btn btn-brand"%>
+    </button>
+    <button type="button" class="btn btn-brand">
+      <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
+    </button>
+    <button type="button" class="btn btn-brand">
+      <%= link_to "Add New Slot", new_school_lesson_lesson_slot_path(@school, @lesson) , class: "btn btn-brand" %>
+    </button>
+    <% else %>
+    <p><%= link_to "Become a Partners", new_school_path %>
+    </p>
+    <% end %>
+  </div>
+
 </div>
 <div class="row">
 

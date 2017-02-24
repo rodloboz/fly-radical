@@ -12,14 +12,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @school = School.find(params[:school_id])
     @lesson = Lesson.find(params[:lesson_id])
+    @lesson_slot = LessonSlot.find(params[:lesson_slot_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @school = School.find(params[:school_id])
     @lesson = Lesson.find(params[:lesson_id])
+    @lesson_slot = LessonSlot.find(params[:lesson_slot_id])
+    @booking.user = current_user
+    @booking.lesson_slot = @lesson_slot
     if @booking.save
-      redirect_to school_lesson_booking_path(@school, @lesson, @booking)
+      redirect_to school_lesson_lesson_slot_booking_path(@school, @lesson, @lesson_slot, @booking)
     else
       render :new
     end

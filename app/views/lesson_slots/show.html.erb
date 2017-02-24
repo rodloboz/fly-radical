@@ -1,2 +1,14 @@
 <h1>LessonSlots#show</h1>
 <p>Find me in app/views/lesson_slots/show.html.erb</p>
+
+
+
+<div>id: <%= @lesson_slot.id %></div>
+<div>price: <%= @lesson_slot.price %></div>
+<div>start: <%= @lesson_slot.start %></div>
+<div>lesson: <%= @lesson_slot.lesson.name %></div>
+
+<div class="col-md-12">
+  <button type="button" class="btn btn-brand"><%= link_to "Add Booking",   new_school_lesson_lesson_slot_booking_path(@school, @lesson, @lesson_slot), class: "btn btn-brand"%>
+  </button>
+</div>

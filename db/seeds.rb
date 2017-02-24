@@ -137,9 +137,4 @@ schools.each do |school|
   end
 end
 
-#Seed that Slot
-slot = LessonSlot.new
-  slot.id = 1
-  slot.lesson_id = 1
-  slot.save!
 
