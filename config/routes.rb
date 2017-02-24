@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
     resources :lessons do
       member do
         get 'activate'
+      end
+      resources :lesson_slots do
+        resources :bookings
       end
     end
 
