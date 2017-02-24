@@ -75,6 +75,9 @@
     <button type="button" class="btn btn-brand">
       <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
     </button>
+    <button type="button" class="btn btn-brand">
+      <%= link_to "Add New Slot", new_school_lesson_lesson_slot_path(@school, @lesson) , class: "btn btn-brand" %>
+    </button>
     <% else %>
     <p><%= link_to "Become a Partners", new_school_path %>
     </p>

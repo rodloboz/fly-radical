@@ -1,11 +1,15 @@
 class LessonSlotsController < ApplicationController
 
   def index
+    @school = School.find(params[:school_id])
+    @lesson = Lesson.find(params[:lesson_id])
     @booked_slots = LessonSlot.all
   end
 
   def show
-    @lesson_slot = LessonSlot.find(params[:lesson_id])
+    @school = School.find(params[:school_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @lesson_slot = LessonSlot.find(params[:id])
   end
 
   def new
@@ -18,8 +22,9 @@ class LessonSlotsController < ApplicationController
     @lesson_slot = LessonSlot.new(lesson_slot_params)
     @school = School.find(params[:school_id])
     @lesson = Lesson.find(params[:lesson_id])
+    @lesson_slot.lesson = @lesson
     if @lesson_slot.save
-      redirect_to school_lesson_lesson_slots_path(@school, @lesson)
+      redirect_to school_lesson_lesson_slot_path(@school, @lesson, @lesson_slot)
     else
       render :new
     end
@@ -31,7 +36,7 @@ class LessonSlotsController < ApplicationController
     @lesson_slot = LessonSlot.find(params[:id])
   end
 
-  def update
+  def update #not working yet
     # raise params.inspect
     @school = School.find(params[:school_id])
     @lesson = Lesson.find(params[:lesson_id])
