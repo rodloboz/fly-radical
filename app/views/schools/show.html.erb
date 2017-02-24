@@ -1,49 +1,67 @@
 <% title @school.name %>
 <div class="row lead">
-  <div class="col-md-12"><h1><%= @school.name %></h1>
-    <hr>
+  <div class="col-md-12"><h1><%= @school.name.titleize %></h1>
   </div>
 </div>
 <div class="row show-page">
-  <div class="col-md-4 ">
+<hr>
+  <div class="col-md-4">
     <% @school.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 350, height: 300, class: "show-img", crop: :fill %>
+    <%= cl_image_tag photo.path, width: 350, height: 350, class: "show-img", crop: :fill %>
     <% end %>
   </div>
+
   <div class="col-md-8">
     <div class="row">
-      <h4 class="col-md-3">About:</h4><p class="col-md-8"><%= @school.about %></p>
+      <p class="col-md-3"><strong>About:</strong></p><p class="col-md-9"><%= @school.about %></p>
     </div>
     <hr>
     <div class="row">
-      <h4 class="col-md-3">Phone: </h4><p class="col-md-6"><%= @school.phone %></p>
+      <p class="col-md-3"><strong>Phone: </strong></p><p class="col-md-6"><%= @school.phone %></p>
     </div>
     <hr>
     <div class="row">
-      <h4 class="col-md-3">Website: </h4><p class="col-md-6"><%= link_to @school.website, "@school.website" %></p>
+      <p class="col-md-3"><strong>Website: </strong></p><p class="col-md-6"><%= link_to @school.website, "@school.website" %></p>
+    </div>
+
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-12">
+    <div class="icon text-center"><hr>
+    </div>
+    <div class="col-sm-4">
+      <div class="attribute text-center"><p>
+        <%= link_to "Go back to Schools", schools_path %></p>
+        <hr>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="icon text-center">
+      </div>
+      <div class="attribute text-center"><p>
+        <%= link_to "Add New Lesson", new_school_lesson_path(@school) %></p>
+        <hr>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="icon text-center">
+      </div>
+      <div class="attribute text-center"><p><%= link_to "View all Lessons", school_lessons_path(@school) %></p>
+      <hr>
+      </div>
     </div>
   </div>
-  <div class="col-md-12">
-    <hr>
-    <% if current_user.schools.any? %>
-    <button type="button" class="btn btn-brand"><%= link_to "Edit School Info", edit_school_path, class: "btn btn-brand"%>
-    </button>
-    <button type="button" class="btn btn-brand">
-      <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
-    </button>
-    <% else %>
-    <p><%= link_to "Become a Partners", new_school_path %>
-    </p>
-    <% end %>
   </div>
 </div>
-<hr>
+
 <div class="row">
 
 </div>
 </div>
 </div>
     <div id="map"></div>
+    </div>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAmoKxzVm-cfE0iboHQnMYjql_oClX8pMk"></script>
     <!-- Include Dependencies of GMaps for Rails gem -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
