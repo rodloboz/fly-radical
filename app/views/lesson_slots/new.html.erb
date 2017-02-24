@@ -1,0 +1,10 @@
+<% title "New lesson slot" %>
+<%= simple_form_for([ @school, @lesson, @lesson_slot]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :quantity %>
+  <%= f.input :lesson_slot_date %>
+
+
+  <%= f.button :submit, class: "btn btn-outline" %>
+<% end %>

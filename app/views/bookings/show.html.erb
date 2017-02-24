@@ -1,0 +1,10 @@
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+
+
+<div>id: <%= @booking.id %></div>
+<div>quantity: <%= @booking.quantity %></div>
+<div>booking date: <%= @booking.booking_date.strftime("%d / %m / %Y") %></div>
+<div>payment date: <%= @booking.payment_date.strftime("%d / %m / %Y") %></div>
+<div>lesson: <%= @booking.lesson %></div>
+

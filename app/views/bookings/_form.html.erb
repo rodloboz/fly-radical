@@ -1,0 +1,10 @@
+<%= simple_form_for(booking, url: path) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :quantity %>
+  <%= f.input :payment_date %>
+  <%= f.input :booking_date %>
+
+  <%= f.button :submit, class: "btn btn-outline"%>
+
+<% end %>
