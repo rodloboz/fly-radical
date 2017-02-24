@@ -1,87 +1,83 @@
 <% title @lesson.name %>
 <div class="row lead">
-  <div class="col-md-12"><h1><%= @lesson.name %></h1>
-    <hr>
+  <div class="col-md-12"><h1><%= @lesson.name.titleize %></h1>
   </div>
 </div>
 
 <div class="col-md-12">
-<div class="col-sm-3">
-    <div class="icon text-center">
-    </div>
-    <div class="attribute text-center"><p><strong>Lesson Price</strong></p>
-      <p style="margin-top: -10px;">&euro;<%= @lesson.price %>.00</p>
-      <hr>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="icon text-center">
-    </div>
-    <div class="attribute text-center"><p><strong>Lesson Dificulty</strong></p>
-      <p style="margin-top: -10px;"><%= @lesson.difficulty %></p>
-      <hr>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="icon text-center">
-    </div>
-    <div class="attribute text-center"><p><strong>Equipment Provided</strong></p>
-      <p style="margin-top: -10px;"><%= @lesson.equipment_provided %></p>
-      <hr>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="icon text-center">
-    </div>
-    <div class="attribute text-center"><p><strong>Equipment Required</strong></p>
-      <p style="margin-top: -10px;"><%= @lesson.equipment_required %></p>
-      <hr>
-    </div>
-  </div>
-  <hr>
-</div>
-
-<div class="row show-page">
-  <hr>
-
-  <div class="col-md-4 ">
-
-    <% @lesson.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 350, height: 300, class: "show-img", crop: :fill %>
-    <% end %>
-  </div>
-  <hr>
-  <div class="col-md-8">
-    <div class="row">
-      <h4 class="col-md-3">About Lesson: </h4><p class="col-md-8"><%= @lesson.description %></p>
-    </div>
+  <div class="row show-page">
     <hr>
-    <div class="row">
-      <h4 class="col-md-3">Cancellation Policy: </h4><p class="col-md-6"><%= @lesson.cancellation_policy %></p>
+    <div class="col-md-4 ">
+      <% @lesson.photos.each do |photo| %>
+      <%= cl_image_tag photo.path, width: 150, height: 150, class: "show-img", crop: :fill %>
+      <% end %>
     </div>
-    <hr>
-    <div class="row">
-      <h4 class="col-md-3">Location: </h4><p class="col-md-6"><%= @lesson.address %><br/>
+    <div class="col-md-8">
+      <div class="row">
+        <p class="col-md-3"><strong>About Lesson: </strong></p><p class="col-md-8"><%= @lesson.description %></p>
+      </div>
+      <hr>
+      <div class="row">
+        <p class="col-md-3"><strong>Cancellation Policy: </strong></p><p class="col-md-6"><%= @lesson.cancellation_policy %></p>
+      </div>
+      <hr>
+      <div class="row">
+        <p class="col-md-3"><strong>Location: </strong></p><p class="col-md-6"><%= @lesson.address %><br/>
         <%= @lesson.city %>
       </p>
     </div>
+    <hr>
 
+    <div class="row">
+    <div class="attribute text-center col-md-3"><p>Lesson <br/>Price</p>
+        <p style="margin-top: -10px; color: #cccccc;">&euro;<%= @lesson.price %>.00</p>
+        <br/>
+      </div>
+      <div class="attribute text-center col-md-3"><p>Lesson<br/> Dificulty</p>
+        <p style="margin-top: -10px; color: #cccccc;"><%= @lesson.difficulty %></p>
+        <br/>
+      </div>
+      <div class="attribute text-center col-md-3"><p>Equipment Provided</p>
+        <p style="margin-top: -10px; color: #cccccc;"><%= @lesson.equipment_provided %></p>
+        <br/>
+      </div>
+      <div class="attribute text-center col-md-3"><p>Equipment Required</p>
+        <p style="margin-top: -10px; color: #cccccc;"><%= @lesson.equipment_required %></p>
+        <br/>
+      </div>
+    </div>
+    <div class="icon text-center">
+    </div>
+  </div>
+  <div class="col-md-12"><hr>
   </div>
   <div class="col-md-12">
-    <hr>
-    <% if current_user.schools.any? %>
-    <button type="button" class="btn btn-brand"><%= link_to "Go back to Schools", school_path, class: "btn btn-brand"%>
-    </button>
-    <button type="button" class="btn btn-brand">
-      <%= link_to "Add New Lesson", new_school_lesson_path(@school) , class: "btn btn-brand" %>
-    </button>
-    <% else %>
-    <p><%= link_to "Become a Partners", new_school_path %>
-    </p>
-    <% end %>
+    <div class="icon text-center">
+    </div>
+    <div class="col-sm-4">
+      <div class="attribute text-center"><p>
+        <%= link_to "Go back to Schools", schools_path %></p>
+        <hr>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="icon text-center">
+      </div>
+      <div class="attribute text-center"><p>
+        <%= link_to "Add New Lesson", new_school_lesson_path(@school) %></p>
+        <hr>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="icon text-center">
+      </div>
+      <div class="attribute text-center"><p><%= link_to "View all Lessons", school_lessons_path(@school) %></p>
+      </div>
+      <hr>
+    </div>
   </div>
 </div>
-<hr>
+</div>
 <div class="row">
 
 </div>

@@ -2,15 +2,17 @@
   <%= link_to school_lesson_path(lesson.school, lesson) do %>
     <div>
       <% if lesson.photos.any? %>
-        <%= cl_image_tag(lesson.photos.first.path, width: :auto, crop: :scale, aspect_ratio: "16:9", responsive: :true, responsive_placeholder: "blank") %>
+
+        <%= cl_image_tag(lesson.photos.first.path, width: 350, height: 200, crop: :fill) %>
         <% end %>
     </div>
     <div>
       <span>
         <strong>€<%= lesson.price %></strong>
          &middot;
-        <%= lesson.name %>
+        <%= lesson.name.titleize %><br>
       </span>
     </div>
   <% end %>
+
 </div>

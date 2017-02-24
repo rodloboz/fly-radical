@@ -1,9 +1,12 @@
 .show-page p{
   font-weight: 300;
+  line-height: 22px;
 }
 
 .show-img {
-  padding-top: 10 0 10 0;
+  padding-top: 10 0 10 5;
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+
 }
 
 .show-button {
@@ -14,5 +17,5 @@
 #map{
   display: flex;
   height: 100vh;
-  width: 200%;
+  width: 100%;
 }
