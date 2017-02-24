@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170223000424) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,7 +81,7 @@ ActiveRecord::Schema.define(version: 20170223000424) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "price"
-    t.integer  "duration"
+    t.string   "duration"
     t.integer  "group_size"
     t.index ["school_id"], name: "index_lessons_on_school_id", using: :btree
     t.index ["sport_id"], name: "index_lessons_on_sport_id", using: :btree

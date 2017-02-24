@@ -12,6 +12,7 @@
   <%= f.input :equipment_required %>
   <%= f.input :difficulty %>
   <%= f.input :cancellation_policy %>
+  <%= f.input :price, as: :integer %>
   <%= f.association :sport, value: Sport.all %>
   <%= f.input :photos, as: :attachinary %>
 

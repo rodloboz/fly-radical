@@ -1,5 +1,3 @@
-require 'chronic_duration'
-
 PHOTOS = %w(https://www.surfingindia.net/files/surf-files/u9/India_Surf_Tours_-_17__1_.jpg
 https://s-media-cache-ak0.pinimg.com/originals/5c/3f/2f/5c3f2f859e3a0aa177e8acabb168c82f.jpg
 http://exoticvoyage.com/wp-content/uploads/2015/04/surfing1.jpg
@@ -132,7 +130,7 @@ schools.each do |school|
     lesson.city = address[:city]
     lesson.country = address[:country]
     lesson.price = rand(21..399)
-    lesson.duration = ChronicDuration.parse(DURATIONS.sample)
+    lesson.duration = DURATIONS.sample
     lesson.group_size = rand (1..9)
     lesson.photo_urls = PHOTOS.sample(2)
     lesson.save!

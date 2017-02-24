@@ -7,6 +7,8 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @lesson_coordinates = { lat: @lesson.latitude, lng: @lesson.longitude }
   end
 
   def new
